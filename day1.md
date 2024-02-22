@@ -1,4 +1,4 @@
-## DAY 1 - Database setup for local testing
+## DAY 1 - Database setup for loca;
 1. Started mysql server  using XAMPP.
 2. Connected to the server using Dbeaver.
 3. Found achiever database missing in mysql server.
