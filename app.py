@@ -2,10 +2,10 @@ import os
 from flask import Flask, render_template, request, redirect, url_for
 from flask_mysqldb import MySQL
 
-app = Flask(__name__)
+app=Flask(__name__,template_folder='templates')
 
 # Configure MySQL from environment variables
-app.config['MYSQL_HOST'] = os.environ.get('MYSQL_HOST', 'localhost')
+app.config['MYSQL_HOST'] = os.environ.get('MYSQL_HOST', 'host.docker.internal')
 app.config['MYSQL_USER'] = os.environ.get('MYSQL_USER', 'root')
 app.config['MYSQL_PASSWORD'] = os.environ.get('MYSQL_PASSWORD', '')
 app.config['MYSQL_DB'] = os.environ.get('MYSQL_DB', 'achievers')
@@ -18,11 +18,7 @@ def hello():
     cur.execute('SELECT message FROM messages')
     messages = cur.fetchall()
     cur.close()
-    return render_template('index.html', messages=messages)
-
-@app.route('/greeting')
-def greeting():
-    return 'Welcome to flask application'
+    return render_template('index.html' , messages=messages)
 
 @app.route('/submit', methods=['POST'])
 def submit():
