@@ -1,21 +1,20 @@
 import os
 from flask import Flask, render_template, request, redirect, url_for
-from flask_mysqldb import MySQL
+import psycopg2
 
 app=Flask(__name__,template_folder='templates')
 
-# Configure MySQL from environment variables
-app.config['MYSQL_HOST'] = os.environ.get('MYSQL_HOST', 'host.docker.internal')
-app.config['MYSQL_USER'] = os.environ.get('MYSQL_USER', 'root')
-app.config['MYSQL_PASSWORD'] = os.environ.get('MYSQL_PASSWORD', '')
-app.config['MYSQL_DB'] = os.environ.get('MYSQL_DB', 'achievers')
-
 # Initialize MySQL
-mysql = MySQL(app)
+#mysql = MySQL(app)
+#initialize postgres connection
+conn = psycopg2.connect(database="achievers",
+                        user="flaskdevl",
+                        password="flaskdevl01",
+                        host="dev-achievers-01.cdcue0e6sf3u.us-east-1.rds.amazonaws.com", port="5432")
 @app.route('/')
 def hello():
-    cur = mysql.connection.cursor()
-    cur.execute('SELECT message FROM messages')
+    cur = conn.cursor()
+    cur.execute('SELECT message FROM dbo.messages')
     messages = cur.fetchall()
     cur.close()
     return render_template('index.html' , messages=messages)
@@ -23,9 +22,9 @@ def hello():
 @app.route('/submit', methods=['POST'])
 def submit():
     new_message = request.form.get('new_message')
-    cur = mysql.connection.cursor()
-    cur.execute('INSERT INTO messages (message) VALUES (%s)', [new_message])
-    mysql.connection.commit()
+    cur = conn.cursor()
+    cur.execute('INSERT INTO dbo.messages (message) VALUES (%s)', [new_message])
+    conn.commit()
     cur.close()
     return redirect(url_for('hello'))
 
