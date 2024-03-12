@@ -9,7 +9,7 @@
 FUNCTIONS : 
 ### <TABLE>- TABLE   <TH>- TABLE HEADER
 
-### <TR> - TABLE ROWS  <TD> - TABLE DATA 
+### <TD> - TABLE DATA  <TR> - TABLE ROWS 
 
 
 * The data here to be print in different rows everytime when user gives input, for this i included below code in body of index.html
