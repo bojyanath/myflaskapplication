@@ -8,10 +8,10 @@
     * TD 
   
 # FUNCTIONS :
-### <TABLE> - TABLE
-### <TH> - TABLE HEADER
+### <TABLE>  TABLE
+### <TH>  TABLE HEADER
 ### <TR>
-### <TD> - TABLE ROWS - TABLE DATA 
+### <TD>  TABLE ROWS = TABLE DATA 
 
 
 * The data here to be print in different rows everytime when user gives input, for this i included below code in body of index.html
