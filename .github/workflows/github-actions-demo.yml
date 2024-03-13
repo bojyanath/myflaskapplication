@@ -1,0 +1,13 @@
+name: GitHub Actions push repository Demo
+run-name: ${{ github.actor }} is testing out GitHub Actions
+on: [push]
+jobs:
+  Build-docker-image:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+      - run: docker build -t my_flask_app_prem .
+      - run: docker image ls
+      - run: docker tag my_flask_app_prem:latest bojyanath/prem-test:latest
+      - run: docker push bojyanath/prem-test:latest
