@@ -7,8 +7,8 @@ jobs:
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
-      - run: docker build -t my_flask_app_prem .
+      - run: docker build -t my-flask-app .
       - run: docker image ls
-      - run: docker tag my_flask_app_prem:latest bojyanath/prem-test:latest
-      - run: docker push bojyanath/prem-test:latest
+      - run: docker tag my-flask-app:latest bojyanath/docker-repo:latest
+      - run: docker push bojyanath/docker-repo:latest
 
