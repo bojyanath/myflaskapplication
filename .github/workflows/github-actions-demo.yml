@@ -10,5 +10,4 @@ jobs:
       - run: docker build -t my-flask-app .
       - run: docker image ls
       - run: docker tag my-flask-app:latest bojyanath/docker-repo:latest
-      - run: docker pull bojyanath/docker-repo:latest
-
+      - run: docker push bojyanath/docker-repo:latest
