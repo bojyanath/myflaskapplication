@@ -7,6 +7,13 @@ jobs:
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
+        env:
+          DOCKER_USER: '${{ secrets.DOCKER_USER }}'
+          DOCKER_PASSWORD: '${{ secrets.DOCKER_PASSWORD }}'
+        run: docker login -u $DOCKER_USER -p $DOCKER_PASSWORD
+        run: docker login -u $DOCKER_USER -p $DOCKER_PASSWORD
+      name:  docker build my-flask-app
+        run: docker build ... -t bojyanath/docker-repo:latest
       - run: docker build -t my-flask-app .
       - run: docker image ls
       - run: docker tag my-flask-app:latest bojyanath/docker-repo:latest
