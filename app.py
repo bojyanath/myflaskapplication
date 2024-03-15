@@ -15,9 +15,9 @@ conn = psycopg2.connect(database="achievers",
 def hello():
     cur = conn.cursor()
     cur.execute('SELECT message FROM dbo.messages')
-    messages = cur.fetchall()
+    messages = cur.fetchall()#messages is varaible
     cur.close()
-    return render_template('index.html' , messages=messages)
+    return render_template('index.html' ,messages=messages) #msgs is A varaible in UI
 
 @app.route('/submit', methods=['POST'])
 def submit():
