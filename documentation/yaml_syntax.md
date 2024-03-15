@@ -4,14 +4,11 @@
 Workflow files use YAML syntax, and must have either a .yml or .yaml file extension
 
 
-## 
-<TABLE>
-<TH> NAME :</TH>
-<TR>
+## NAME
+```
 The name of the workflow. GitHub displays the names of your workflows under your repository's "Actions" tab
-</TR>
-</TABLE>
 
+```
 
 ## 
 <TABLE>
