@@ -5,4 +5,4 @@ WORKDIR /app
 # Copy the rest of the application code
 COPY . .
 #entry point to run application
-CMD ["python", "app.py"]
+CMD ["python", "hello.py"]
