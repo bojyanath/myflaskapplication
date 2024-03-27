@@ -6,13 +6,14 @@
 print ('Hello,this is a test to my Python and docker knowledge')
 ```
 * Step 2 : created a docker file with all the commands a user could call on the command line to assemble an image.
+
 ```dockerfile
 #base image
 FROM python:3.9-slim
 #working directory in  container
 WORKDIR /app
 #Copy the rest of the application code
-COPY . .
+COPY .. .
 #entry point to run application
 CMD ["python", "hello.py"]
 ```   
