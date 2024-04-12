@@ -5,6 +5,6 @@ metadata:
 spec:
   containers:
     - name: flask-app-container-yaml
-      image: bojyanath/prem-test:latest
+      image: bojyanath/docker-repo:latest
       ports:
         - containerPort: 5000
