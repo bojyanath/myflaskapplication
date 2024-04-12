@@ -1,0 +1,10 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: flask-app-pod-yaml
+spec:
+  containers:
+    - name: flask-app-container-yaml
+      image: bojyanath/prem-test:latest
+      ports:
+        - containerPort: 5000

@@ -1,0 +1,10 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: my-boj-pod-yaml
+spec:
+  containers:
+  - name: my-boj-container-yaml
+    image: nginx
+    ports:
+    - containerPort: 80

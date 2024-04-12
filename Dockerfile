@@ -17,7 +17,12 @@ RUN pip install requests==2.26.0
 RUN pip install Werkzeug==2.2.2
 RUN pip install psycopg2-binary
 
+#Env Variables
+ENV DB_USER="flaskdevl"
+ENV DB_USER_PWD="flaskdevl01"
+ENV DB_HOST="dev-achievers-01.cdcue0e6sf3u.us-east-1.rds.amazonaws.com"
+
 # Copy the rest of the application code
-COPY . .
+COPY .. .
 #entry point to run application
 CMD ["python", "app.py"]

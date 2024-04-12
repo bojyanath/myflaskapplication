@@ -6,9 +6,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Flask App</title>
     <style>
-        table, th, td {
-            border: 1px solid black;
-        }
         body, h1, p, form, input {
             margin: 0;
             padding: 0;
@@ -97,22 +94,14 @@
 <body>
     <div class="container">
         <h1>welcome to flask application</h1>
+        {% for message in messages %}
+            <p>{{ message[0] }}</p>
+        {% endfor %}
 
         <form action="/submit" method="post">
             <input type="text" name="new_message" placeholder="Enter a new message">
             <input type="submit" value="Submit">
         </form>
-    <table>
-  <tr>
-    <th>messages</th>
-  </tr>
-   {% for message in messages %}
-   <tr>
-       <td>{{ message[0] }}</td>
-   </tr>
-        {% endfor %}
-</table>
-
     </div>
 </body>
 

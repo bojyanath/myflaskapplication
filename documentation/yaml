@@ -1,0 +1,11 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: my_bojyanath_pod
+spec:
+  containers:
+  - name: my_bojyanath_pod
+    image: my_bojyanath_pod:latest
+    ports:
+    - containerPort: 5000
+
